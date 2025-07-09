@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trend Media  OTT</title>
+   <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0c001b;
+    }
+
+    nav {
+      background : linear-gradient(to right, #000000cc, #400286cc);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffc400;
+    }
+
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 150px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+    }
+ 
+    /* 16:9 for mobile by default */
+    .swiper-container-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 ratio */
+    }
+
+    /* 21:9 ratio on desktop */
+    @media (min-width: 768px) {
+      .swiper-container-wrapper {
+        padding-top: 42.85%; /* 21:9 ratio = 9 / 21 */
+      }
+    }
+
+    .swiper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Show different image on desktop */
+.swiper-slide .mobile-img{
+    display: block;
+}
+
+    @media (min-width: 768px) {
+      .mobile-img {
+        display: none;
+      }
+
+      .desktop-img {
+        display: block;
+      }
+    }
+
+    /* Pagination styles */
+    .swiper-pagination-bullet {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #fff;
+    }
+    
+    .section {
+  padding: 1rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.line {
+  width: 3px;
+  height: 20px;
+   font-size: 0.8rem;
+  background-color: #ffc400;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.movie-grid a {
+  position: relative;
+  width: 100%;
+  padding-top: 133.33%; /* 4 / 3 = 1.3333 = 133.33% */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.movie-grid a img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.movie-grid a img:hover {
+  transform: scale(1.05);
+}
+h2 {
+  color: #fff; /* or any color you prefer */
+  font-family: 'Poppins', sans-serif;
+}
+.mobile-container {
+  max-width: 375px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  background: #0c001b;
+}
+    
+  </style>
+</head>
+<body>
+    <div class="mobile-container">
+
+  <nav>
+    <div class="logo">
+      
+        <img src="logo.png" alt="Logo" />
+      </a>
+    </div>
+
+  </nav>
+     <div class="swiper-container-wrapper">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <img class="mobile-img" src="slider1.jpg" alt="Mobile 1">
+          <img class="desktop-img" src="https://via.placeholder.com/1920x800?text=Desktop+Slide+1" alt="Desktop 1">
+        </div>
+
+        <div class="swiper-slide">
+          <img class="mobile-img" src="slider2.jpg" alt="Mobile 2">
+          <img class="desktop-img" src="https://via.placeholder.com/1920x800?text=Desktop+Slide+2" alt="Desktop 2">
+        </div>
+
+      </div>
+
+      <!-- Pagination dots only -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+
+   <section class="section">
+    <div class="section-heading">
+      <div class="line"></div>
+      <h2>Teaser</h2>
+    </div>
+    <div class="movie-grid">
+      <a href="movie.html?id=1">
+        <img src="20250624_135605.jpg" alt="Movie 1">
+      </a>
+      <a href="movie.html?id=2">
+        <img src="20250624_135605.jpg" alt="Movie 2">
+      </a>
+    </div>
+  </section>
+
+  <!-- Recommended Movies -->
+  <section class="section">
+    <div class="section-heading">
+      <div class="line"></div>
+      <h2>TM Originals</h2>
+    </div>
+    <div class="movie-grid">
+       <a href="movie.html?id=3">
+        <img src="20250624_135605.jpg" alt="Movie 2">
+      </a>
+       <a href="movie.html?id=3">
+        <img src="20250624_135605.jpg" alt="Movie 2">
+      </a>
+    </div>
+  </section>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      // Navigation buttons disabled
+      navigation: false,
+    });
+  </script>
+</body>
+</html>
